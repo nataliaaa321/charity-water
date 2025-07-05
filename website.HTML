@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Name Card</title>
+  <title>Charity: Water</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
   <div class="container">
@@ -23,7 +24,8 @@
       <div class="info-box">
         <h2>Donate Now to Make a Change!</h2>
         <div class="inner-box">
-          <p>Enter amount here.</p>
+          <span> $ </span>
+          <input type="number" placeholder="Enter amount here!" min="1" step="1" style="width: 175px; font-size: 1em;">
         </div>
         <div class="inner-box">
           <p>Donate!</p>
@@ -38,5 +40,30 @@
       >
     </div>
   </div>
+  <script>
+    // Find the last inner-box and add a click event to trigger confetti from the text box
+    document.addEventListener('DOMContentLoaded', function() {
+      const innerBoxes = document.querySelectorAll('.inner-box');
+      const lastBox = innerBoxes[innerBoxes.length - 1];
+      const inputBox = document.querySelector('.inner-box input[type="number"]');
+      const infoBox = document.querySelector('.info-box');
+      lastBox.addEventListener('click', function() {
+        if (inputBox) {
+          const rect = inputBox.getBoundingClientRect();
+          const x = (rect.left + rect.width / 2) / window.innerWidth;
+          const y = (rect.top + rect.height / 2) / window.innerHeight;
+          confetti({
+            origin: { x, y }
+          });
+        } else {
+          confetti();
+        }
+        // Replace info-box content with thank you message
+        if (infoBox) {
+          infoBox.innerHTML = '<h2>Thank you for your donation! Subscribe to our newsletter to stay in the know.</h2>';
+        }
+      });
+    });
+  </script>
 </body>
 </html>

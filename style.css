@@ -26,6 +26,7 @@ body {
 }
 
 .left h1 {
+  font-family: 'Proxima Nova';
   font-size: 45px;
   margin-left: 20px;
   text-align: center;
@@ -35,12 +36,20 @@ body {
 }
 
 .left h2 {
+  font-family: 'Proxima Nova';
   margin-left: 20px;
   margin-right: 5px;
   font-size: 25px;
   text-align: center;
   margin-top: 10;
   color: #003366;
+}
+.left h3 {
+  font-family: 'Proxima Nova';
+  margin-left: 0px;
+  font-size: 25px;
+  text-align: left;
+  
 }
 
 .right {
@@ -64,7 +73,7 @@ body {
 }
 
 .info-box {
-  margin: 0px 40px 0 40px;
+  margin: 0px 150px 0 150px;
   padding: 20px;
   background: #FFC907;
   border-radius: 12px;
@@ -75,8 +84,9 @@ body {
 }
 
 .inner-box {
-  margin-top: 18px;
-  padding: 5px;
+  font-family: 'Proxima Nova';
+  margin-top: 8px;
+  padding: 10px;
   border-radius: 5px;
   font-size: 16px;
   display: flex;
@@ -87,9 +97,11 @@ body {
 .inner-box:first-of-type {
   background-color: #FFF7E1;
   color: #1A1A1A;
-  max-width: 175px;
+  max-width: 200px;
   max-height: 20px;
   margin: auto;
+  margin-bottom: 0px;
+  margin-top: 40px;
   text-align: center;
 }
 
@@ -100,7 +112,20 @@ body {
   max-width: 105px;
   max-height: 25px;
   margin: auto;
-  margin-top: 10px;
+  margin-top: 30px;
+  margin-bottom: 20px;
   text-align: center;
+  border: 2px solid #1A1A1A;
+}
 
+.inner-box:last-of-type:hover {
+  background-color: #f9eebb;
+  cursor: pointer;
+}
+
+.inner-box span {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 5px;
+  margin-right: 5px;
 }
